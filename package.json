@@ -1,17 +1,14 @@
 {
   "name": "db-masker",
   "version": "1.0.0",
-  "description": "High-throughput SQL stream anonymizer & synthetic data masker CLI with referential integrity preservation",
-  "main": "dist/index.js",
-  "bin": {
-    "db-masker": "./bin/db-masker.js"
-  },
+  "description": "High-throughput SQL stream anonymizer & synthetic data masker written in Go with deterministic referential integrity preservation",
   "scripts": {
-    "build": "tsc",
-    "test": "node test/run-tests.js",
-    "demo": "node bin/db-masker.js --config examples/rules.json < examples/sample-dump.sql"
+    "build": "go build -o bin/db-masker cmd/db-masker/main.go",
+    "test": "go test -v ./pkg/...",
+    "demo": "go run cmd/db-masker/main.go -c examples/rules.json < examples/sample-dump.sql"
   },
   "keywords": [
+    "golang",
     "sql",
     "anonymizer",
     "masker",
@@ -19,12 +16,8 @@
     "gdpr",
     "synthetic-data",
     "stream-processing",
-    "referential-integrity",
-    "data-privacy"
+    "referential-integrity"
   ],
   "author": "Kevin Naserwan <kevinnaserwan@gmail.com>",
-  "license": "MIT",
-  "engines": {
-    "node": ">=16.0.0"
-  }
+  "license": "MIT"
 }
