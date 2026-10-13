@@ -1,0 +1,30 @@
+{
+  "name": "db-masker",
+  "version": "1.0.0",
+  "description": "High-throughput SQL stream anonymizer & synthetic data masker CLI with referential integrity preservation",
+  "main": "dist/index.js",
+  "bin": {
+    "db-masker": "./bin/db-masker.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "node test/run-tests.js",
+    "demo": "node bin/db-masker.js --config examples/rules.json < examples/sample-dump.sql"
+  },
+  "keywords": [
+    "sql",
+    "anonymizer",
+    "masker",
+    "pii",
+    "gdpr",
+    "synthetic-data",
+    "stream-processing",
+    "referential-integrity",
+    "data-privacy"
+  ],
+  "author": "Kevin Naserwan <kevinnaserwan@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

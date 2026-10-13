@@ -1,0 +1,25 @@
+{
+  "tables": {
+    "users": {
+      "rules": {
+        "id": { "type": "pk_id", "domain": "user_id" },
+        "full_name": { "type": "name" },
+        "email": { "type": "email" },
+        "phone_number": { "type": "phone" },
+        "nik": { "type": "nik" },
+        "home_address": { "type": "address" },
+        "password_hash": { "type": "password_hash" },
+        "monthly_salary": { "type": "numeric_variance", "variance": 10 }
+      }
+    },
+    "orders": {
+      "rules": {
+        "id": { "type": "pk_id", "domain": "order_id" },
+        "user_id": { "type": "fk_id", "domain": "user_id" },
+        "shipping_address": { "type": "address" },
+        "total_amount": { "type": "numeric_variance", "variance": 15 },
+        "credit_card_masked": { "type": "redact" }
+      }
+    }
+  }
+}
